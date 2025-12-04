@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پژوهستان - پروپوزال‌ساز دانشگاهی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* هدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #1a2530);
+            color: white;
+            padding: 25px 0;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-left: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .site-title h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .site-title p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #ecf0f1;
+        }
+        
+        .scientific-icons {
+            display: flex;
+            font-size: 1.8rem;
+            gap: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* دکمه‌ها */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        /* فرم */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-section, .preview-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            height: fit-content;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* پیش‌نمایش */
+        .proposal-preview {
+            background-color: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            min-height: 500px;
+            font-family: 'B Nazanin', 'Iranian Sans', Tahoma;
+            line-height: 1.8;
+        }
+        
+        .proposal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .proposal-header h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .proposal-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .proposal-section {
+            margin-bottom: 25px;
+        }
+        
+        .proposal-section h3 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* تاریخچه */
+        .history-section {
+            margin-top: 40px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+        }
+        
+        .history-list {
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .history-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            transition: var(--transition);
+        }
+        
+        .history-item:hover {
+            background-color: #f1f8ff;
+            transform: translateX(5px);
+        }
+        
+        .history-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .history-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .history-date {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: left;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        /* فوت‌ر */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        /* دکمه‌های شناور */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-btn.print {
+            background-color: var(--primary-color);
+        }
+        
+        .floating-btn.download {
+            background-color: var(--success-color);
+        }
+        
+        .floating-btn.clear {
+            background-color: var(--accent-color);
+        }
+        
+        /* حالت چاپ */
+        @media print {
+            header, .form-section, .history-section, .action-buttons, .floating-buttons, footer {
+                display: none !important;
+            }
+            
+            .preview-section {
+                box-shadow: none;
+                width: 100%;
+            }
+            
+            .proposal-preview {
+                min-height: auto;
+                border: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="site-title">
+                        <h1>پژوهستان</h1>
+                        <p>مجموعه ابزارهای گروه دکتر شریفی</p>
+                    </div>
+                </div>
+                <div class="scientific-icons">
+                    <i class="fas fa-atom"></i>
+                    <i class="fas fa-microscope"></i>
+                    <i class="fas fa-book-open"></i>
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- محتوای اصلی -->
+    <div class="container">
+        <div class="main-content">
+            <!-- بخش فرم -->
+            <section class="form-section">
+                <h2 class="section-title"><i class="fas fa-edit"></i> ورودی‌های پروپوزال</h2>
+                
+                <form id="proposalForm">
+                    <div class="form-group">
+                        <label for="topic">موضوع اصلی پژوهش</label>
+                        <input type="text" id="topic" class="form-control" placeholder="مثال: بررسی تأثیر هوش مصنوعی بر بهره‌وری سازمانی" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">نام محقق/پژوهشگر</label>
+                        <input type="text" id="name" class="form-control" placeholder="مثال: علی محمدی" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="field">زمینه تخصصی پژوهش</label>
+                        <select id="field" class="form-control" required>
+                            <option value="">انتخاب زمینه تخصصی</option>
+                            <option value="engineering">مهندسی</option>
+                            <option value="medical">پزشکی و سلامت</option>
+                            <option value="humanities">علوم انسانی</option>
+                            <option value="basic-sciences">علوم پایه</option>
+                            <option value="social-sciences">علوم اجتماعی</option>
+                            <option value="art">هنر و معماری</option>
+                            <option value="management">مدیریت و کسب‌وکار</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="background">پیشینه و زمینه پژوهش (اختیاری)</label>
+                        <textarea id="background" class="form-control" placeholder="توضیح مختصر درباره پیشینه تحقیق و ضرورت انجام پژوهش"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="objectives">اهداف اصلی پژوهش (هر هدف در یک خط)</label>
+                        <textarea id="objectives" class="form-control" placeholder="هدف اول: بررسی...
+هدف دوم: تحلیل...
+هدف سوم: طراحی..."></textarea>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button type="button" id="generateBtn" class="btn btn-primary">
+                            <i class="fas fa-cogs"></i> تولید پروپوزال
+                        </button>
+                        <button type="button" id="generateQuestionsBtn" class="btn btn-success">
+                            <i class="fas fa-question-circle"></i> تولید سوالات پژوهشی
+                        </button>
+                        <button type="reset" class="btn btn-warning">
+                            <i class="fas fa-eraser"></i> پاک کردن فرم
+                        </button>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- بخش پیش‌نمایش -->
+            <section class="preview-section">
+                <h2 class="section-title"><i class="fas fa-file-alt"></i> پیش‌نمایش پروپوزال</h2>
+                
+                <div id="proposalPreview" class="proposal-preview">
+                    <div class="empty-state">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>پروپوزالی تولید نشده است</h3>
+                        <p>برای تولید پروپوزال دانشگاهی، لطفاً فرم سمت چپ را پر کنید و روی دکمه "تولید پروپوزال" کلیک کنید.</p>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button type="button" id="printBtn" class="btn btn-primary" disabled>
+                        <i class="fas fa-print"></i> چاپ پروپوزال
+                    </button>
+                    <button type="button" id="saveBtn" class="btn btn-success" disabled>
+                        <i class="fas fa-save"></i> ذخیره در تاریخچه
+                    </button>
+                    <button type="button" id="exportBtn" class="btn btn-accent" disabled>
+                        <i class="fas fa-download"></i> ذخیره به عنوان HTML
+                    </button>
+                </div>
+            </section>
+        </div>
+        
+        <!-- بخش تاریخچه -->
+        <section class="history-section">
+            <h2 class="section-title"><i class="fas fa-history"></i> سابقه تولید پروپوزال‌ها</h2>
+            <div id="historyList" class="history-list">
+                <div class="empty-state">
+                    <i class="fas fa-history"></i>
+                    <h3>تاریخچه‌ای موجود نیست</h3>
+                    <p>پس از تولید و ذخیره پروپوزال، موارد اینجا نمایش داده می‌شوند.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- دکمه‌های شناور -->
+    <div class="floating-buttons">
+        <div class="floating-btn print" title="چاپ" id="floatPrint">
+            <i class="fas fa-print"></i>
+        </div>
+        <div class="floating-btn download" title="دانلود" id="floatDownload">
+            <i class="fas fa-download"></i>
+        </div>
+        <div class="floating-btn clear" title="پاک کردن تاریخچه" id="floatClear">
+            <i class="fas fa-trash"></i>
+        </div>
+    </div>
+    
+    <!-- فوت‌ر -->
+    <footer class="container">
+        <p>پژوهستان - مجموعه ابزارهای گروه دکتر شریفی | © ۱۴۰۳ - تمامی حقوق محفوظ است</p>
+        <p>این ابزار برای کمک به پژوهشگران در تدوین اولیه پروپوزال طراحی شده و نیاز به بررسی نهایی توسط اساتید راهنما دارد.</p>
+    </footer>
+    
+    <script>
+        // متغیرهای全局
+        let history = JSON.parse(localStorage.getItem('proposalHistory')) || [];
+        let currentProposal = null;
+        
+        // رندر تاریخچه
+        function renderHistory() {
+            const historyList = document.getElementById('historyList');
+            
+            if (history.length === 0) {
+                historyList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-history"></i>
+                        <h3>تاریخچه‌ای موجود نیست</h3>
+                        <p>پس از تولید و ذخیره پروپوزال، موارد اینجا نمایش داده می‌شوند.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let historyHTML = '';
+            
+            // نمایش آیتم‌های تاریخچه به ترتیب معکوس (جدیدترین اول)
+            [...history].reverse().forEach((item, index) => {
+                const date = new Date(item.date).toLocaleString('fa-IR');
+                historyHTML += `
+                    <div class="history-item">
+                        <h4>${item.topic}</h4>
+                        <p><strong>پژوهشگر:</strong> ${item.name}</p>
+                        <p><strong>زمینه:</strong> ${getFieldName(item.field)}</p>
+                        <p class="history-date">${date}</p>
+                        <button onclick="loadHistoryItem(${history.length - 1 - index})" class="btn" style="padding: 5px 10px; margin-top: 10px; font-size: 0.9rem;">
+                            <i class="fas fa-eye"></i> مشاهده
+                        </button>
+                    </div>
+                `;
+            });
+            
+            historyList.innerHTML = historyHTML;
+        }
+        
+        // دریافت نام زمینه تخصصی
+        function getFieldName(fieldKey) {
+            const fields = {
+                'engineering': 'مهندسی',
+                'medical': 'پزشکی و سلامت',
+                'humanities': 'علوم انسانی',
+                'basic-sciences': 'علوم پایه',
+                'social-sciences': 'علوم اجتماعی',
+                'art': 'هنر و معماری',
+                'management': 'مدیریت و کسب‌وکار'
+            };
+            return fields[fieldKey] || fieldKey;
+        }
+        
+        // تولید سوالات پژوهشی بر اساس موضوع
+        function generateResearchQuestions(topic, field) {
+            const questions = {
+                main: [],
+                sub: []
+            };
+            
+            // سوالات اصلی بر اساس زمینه
+            if (field === 'engineering') {
+                questions.main = [
+                    `مکانیزم تأثیر ${topic} بر بهبود فرآیندهای مهندسی چیست؟`,
+                    `چه مدل‌سازی‌هایی برای ارزیابی کارایی ${topic} قابل ارائه است؟`,
+                    `مهم‌ترین چالش‌های فنی پیاده‌سازی ${topic} کدامند؟`
+                ];
+                questions.sub = [
+                    `آیا بین پیچیدگی ${topic} و کارایی آن رابطه معنی‌داری وجود دارد؟`,
+                    `نقش نوآوری‌های تکنولوژیک در توسعه ${topic} چگونه است؟`,
+                    `چه استانداردهایی برای ارزیابی کیفیت ${topic} مورد نیاز است؟`
+                ];
+            } else if (field === 'medical') {
+                questions.main = [
+                    `تأثیر ${topic} بر شاخص‌های سلامت بیماران چگونه است؟`,
+                    `کاربردپذیری ${topic} در تشخیص و درمان بیماری‌ها به چه صورت است؟`,
+                    `مکانیزم‌های فیزیولوژیک مرتبط با ${topic} کدامند؟`
+                ];
+                questions.sub = [
+                    `آیا ${topic} بر بهبود کیفیت زندگی بیماران تأثیر معناداری دارد؟`,
+                    `موانع پذیرش ${topic} در سیستم‌های درمانی چیست؟`,
+                    `نقش آموزش در بهره‌وری از ${topic} چگونه است؟`
+                ];
+            } else if (field === 'humanities') {
+                questions.main = [
+                    `مؤلفه‌های اصلی تشکیل‌دهنده ${topic} در بافت فرهنگی چیست؟`,
+                    `تحول تاریخی ${topic} در دوره‌های مختلف چگونه بوده است؟`,
+                    `نقش ${topic} در شکل‌گیری هویت اجتماعی چگونه است؟`
+                ];
+                questions.sub = [
+                    `آیا بین ${topic} و ارزش‌های فرهنگی جامعه رابطه معناداری وجود دارد؟`,
+                    `تفاوت‌های جنسیتی در برخورد با ${topic} چگونه است؟`,
+                    `تأثیر آموزش بر نگرش نسبت به ${topic} چگونه است؟`
+                ];
+            } else {
+                // سوالات عمومی
+                questions.main = [
+                    `مؤلفه‌های کلیدی مؤثر بر ${topic} کدامند؟`,
+                    `رابطه بین ${topic} و متغیرهای مرتبط چگونه است؟`,
+                    `چه مدل‌هایی برای تبیین ${topic} قابل ارائه است؟`
+                ];
+                questions.sub = [
+                    `آیا بین ${topic} و عوامل زمینه‌ای رابطه معناداری وجود دارد؟`,
+                    `تفاوت‌های گروهی در ${topic} چگونه است؟`,
+                    `چه راهکارهایی برای بهبود ${topic} قابل ارائه است؟`
+                ];
+            }
+            
+            return questions;
+        }
+        
+        // تولید موضوعات فرعی
+        function generateSubTopics(topic, field) {
+            const subTopics = [];
+            
+            if (field === 'engineering') {
+                subTopics.push(`مدل‌سازی و شبیه‌سازی ${topic}`);
+                subTopics.push(`بهینه‌سازی پارامترهای ${topic}`);
+                subTopics.push(`ارزیابی کارایی و اثربخشی ${topic}`);
+            } else if (field === 'medical') {
+                subTopics.push(`مطالعه اپیدمیولوژیک ${topic}`);
+                subTopics.push(`ارزیابی اثربخشی بالینی ${topic}`);
+                subTopics.push(`مکانیزم‌های مولکولی و سلولی ${topic}`);
+            } else if (field === 'humanities') {
+                subTopics.push(`تحلیل گفتمان ${topic}`);
+                subTopics.push(`مطالعه تطبیقی ${topic}`);
+                subTopics.push(`تبارشناسی مفهوم ${topic}`);
+            } else {
+                subTopics.push(`تحلیل چندبعدی ${topic}`);
+                subTopics.push(`مطالعه تطبیقی ${topic}`);
+                subTopics.push(`ارائه مدل مفهومی برای ${topic}`);
+            }
+            
+            return subTopics;
+        }
+        
+        // تولید پروپوزال
+        function generateProposal() {
+            const topic = document.getElementById('topic').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const field = document.getElementById('field').value;
+            const background = document.getElementById('background').value.trim();
+            const objectives = document.getElementById('objectives').value.trim();
+            
+            if (!topic || !name || !field) {
+                alert('لطفاً موارد ضروری (موضوع، نام و زمینه تخصصی) را پر کنید.');
+                return;
+            }
+            
+            // تولید محتوای خودکار
+            const subTopics = generateSubTopics(topic, field);
+            const questions = generateResearchQuestions(topic, field);
+            const fieldName = getFieldName(field);
+            
+            // اهداف پژوهش
+            const objectivesList = objectives ? objectives.split('\n').filter(obj => obj.trim()) : [
+                `بررسی و تحلیل ${topic} در زمینه ${fieldName}`,
+                `شناسایی عوامل مؤثر بر ${topic}`,
+                `ارائه راهکارهای بهبود و بهینه‌سازی ${topic}`
+            ];
+            
+            // تاریخ جاری
+            const currentDate = new Date().toLocaleDateString('fa-IR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // ساخت پروپوزال
+            const proposalHTML = `
+                <div class="proposal-header">
+                    <h2>طرح تحقیق (پروپوزال) دانشگاهی</h2>
+                    <p>موضوع: ${topic}</p>
+                    <p>پژوهشگر: ${name}</p>
+                    <p>تاریخ: ${currentDate}</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۱. اطلاعات کلی پژوهش</h3>
+                    <p><strong>موضوع اصلی:</strong> ${topic}</p>
+                    <p><strong>زمینه تخصصی:</strong> ${fieldName}</p>
+                    <p><strong>پژوهشگر:</strong> ${name}</p>
+                    <p><strong>استاد راهنما:</strong> دکتر شریفی (پیشنهادی)</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۲. موضوعات فرعی پژوهش</h3>
+                    <ol>
+                        ${subTopics.map(st => `<li>${st}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۳. سوالات اصلی پژوهش</h3>
+                    <ol>
+                        ${questions.main.map(q => `<li>${q}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۴. سوالات فرعی پژوهش</h3>
+                    <ol>
+                        ${questions.sub.map(q => `<li>${q}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۵. پیشینه و بیان مسئله</h3>
+                    <p>${background || `پژوهش حاضر به بررسی ${topic} در حوزه ${fieldName} می‌پردازد. با توجه به تحولات اخیر در این حوزه و نیاز به توسعه دانش بومی، این تحقیق در صدد است تا با رویکردی نظام‌مند به تبیین ابعاد مختلف ${topic} پرداخته و راهکارهای عملی ارائه نماید.`}</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۶. اهداف پژوهش</h3>
+                    <ol>
+                        ${objectivesList.map(obj => `<li>${obj}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۷. روش شناسی پژوهش</h3>
+                    <p>این پژوهش از نوع مطالعات ${field === 'engineering' ? 'تجربی-کاربردی' : field === 'medical' ? 'تجربی-بالینی' : 'توصیفی-تحلیلی'} بوده و با استفاده از روش‌های ${field === 'engineering' ? 'شبیه‌سازی و مدل‌سازی' : field === 'medical' ? 'آزمایشگاهی و آماری' : 'کتابخانه‌ای و میدانی'} انجام خواهد شد. جامعه آماری پژوهش شامل [...] بوده و نمونه‌گیری به روش [...] انجام می‌گیرد. ابزار جمع‌آوری داده‌ها [...] بوده و داده‌ها با استفاده از نرم‌افزار [...] و روش‌های آماری [...] تحلیل خواهند شد.</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۸. اهمیت و ضرورت پژوهش</h3>
+                    <p>این تحقیق از چند جهت حائز اهمیت است: ۱) توسعه دانش نظری در حوزه ${topic}، ۲) ارائه راهکارهای عملی برای بهبود ${topic}، ۳) کمک به سیاست‌گذاری و تصمیم‌گیری در زمینه ${fieldName}، و ۴) ایجاد زمینه برای تحقیقات آتی در این حوزه.</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>۹. منابع پیشنهادی</h3>
+                    <p>۱. منابع داخلی مرتبط با ${topic}<br>
+                    ۲. مقالات معتبر بین‌المللی در حوزه ${fieldName}<br>
+                    ۳. پایان‌نامه‌های مرتبط با موضوع پژوهش<br>
+                    ۴. منابع معتبر علمی-پژوهشی منتشر شده در ۵ سال اخیر</p>
+                </div>
+            `;
+            
+            // ذخیره پروپوزال جاری
+            currentProposal = {
+                topic,
+                name,
+                field,
+                background,
+                objectives: objectivesList,
+                subTopics,
+                questions,
+                date: new Date().toISOString(),
+                html: proposalHTML
+            };
+            
+            // نمایش پروپوزال
+            document.getElementById('proposalPreview').innerHTML = proposalHTML;
+            
+            // فعال کردن دکمه‌ها
+            document.getElementById('printBtn').disabled = false;
+            document.getElementById('saveBtn').disabled = false;
+            document.getElementById('exportBtn').disabled = false;
+            document.getElementById('floatPrint').style.display = 'flex';
+            document.getElementById('floatDownload').style.display = 'flex';
+            
+            // اسکرول به بخش پیش‌نمایش
+            document.querySelector('.preview-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // تولید سوالات پژوهشی
+        function generateQuestionsOnly() {
+            const topic = document.getElementById('topic').value.trim();
+            const field = document.getElementById('field').value;
+            
+            if (!topic || !field) {
+                alert('لطفاً موضوع و زمینه تخصصی را پر کنید.');
+                return;
+            }
+            
+            const questions = generateResearchQuestions(topic, field);
+            const fieldName = getFieldName(field);
+            
+            const questionsHTML = `
+                <div class="proposal-header">
+                    <h2>سوالات پژوهشی تولید شده</h2>
+                    <p>موضوع: ${topic}</p>
+                    <p>زمینه: ${fieldName}</p>
+                    <p>تاریخ تولید: ${new Date().toLocaleDateString('fa-IR')}</p>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>سوالات اصلی پژوهش</h3>
+                    <ol>
+                        ${questions.main.map(q => `<li>${q}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>سوالات فرعی پژوهش</h3>
+                    <ol>
+                        ${questions.sub.map(q => `<li>${q}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="proposal-section">
+                    <h3>راهنمای استفاده</h3>
+                    <p>سوالات فوق به صورت خودکار بر اساس موضوع و زمینه تخصصی شما تولید شده‌اند. می‌توانید این سوالات را ویرایش کرده و در پروپوزال خود استفاده نمایید. برای تولید پروپوزال کامل، از دکمه "تولید پروپوزال" استفاده کنید.</p>
+                </div>
+            `;
+            
+            document.getElementById('proposalPreview').innerHTML = questionsHTML;
+            
+            // فعال کردن دکمه چاپ
+            document.getElementById('printBtn').disabled = false;
+            document.getElementById('floatPrint').style.display = 'flex';
+            
+            // اسکرول به بخش پیش‌نمایش
+            document.querySelector('.preview-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // ذخیره پروپوزال در تاریخچه
+        function saveProposal() {
+            if (!currentProposal) {
+                alert('پروپوزالی برای ذخیره وجود ندارد. لطفاً ابتدا یک پروپوزال تولید کنید.');
+                return;
+            }
+            
+            // بررسی تکراری نبودن
+            const isDuplicate = history.some(item => 
+                item.topic === currentProposal.topic && 
+                item.name === currentProposal.name &&
+                Math.abs(new Date(item.date) - new Date(currentProposal.date)) < 60000 // کمتر از یک دقیقه اختلاف
+            );
+            
+            if (!isDuplicate) {
+                history.push(currentProposal);
+                localStorage.setItem('proposalHistory', JSON.stringify(history));
+                renderHistory();
+                alert('پروپوزال با موفقیت در تاریخچه ذخیره شد.');
+            } else {
+                alert('این پروپوزال قبلاً در تاریخچه ذخیره شده است.');
+            }
+        }
+        
+        // بارگذاری آیتم تاریخچه
+        function loadHistoryItem(index) {
+            if (index >= 0 && index < history.length) {
+                const item = history[index];
+                document.getElementById('proposalPreview').innerHTML = item.html;
+                currentProposal = item;
+                
+                // فعال کردن دکمه‌ها
+                document.getElementById('printBtn').disabled = false;
+                document.getElementById('saveBtn').disabled = true; // چون قبلاً ذخیره شده
+                document.getElementById('exportBtn').disabled = false;
+                document.getElementById('floatPrint').style.display = 'flex';
+                document.getElementById('floatDownload').style.display = 'flex';
+                
+                // اسکرول به بخش پیش‌نمایش
+                document.querySelector('.preview-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // چاپ پروپوزال
+        function printProposal() {
+            window.print();
+        }
+        
+        // ذخیره پروپوزال به عنوان HTML
+        function exportProposal() {
+            if (!currentProposal) {
+                alert('پروپوزالی برای ذخیره وجود ندارد.');
+                return;
+            }
+            
+            const fullHTML = `
+                <!DOCTYPE html>
+                <html lang="fa" dir="rtl">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>پروپوزال: ${currentProposal.topic}</title>
+                    <style>
+                        body {
+                            font-family: 'B Nazanin', 'Iranian Sans', Tahoma;
+                            line-height: 1.8;
+                            padding: 40px;
+                            color: #333;
+                            max-width: 1000px;
+                            margin: 0 auto;
+                        }
+                        h1, h2, h3 {
+                            color: #2c3e50;
+                        }
+                        .header {
+                            text-align: center;
+                            margin-bottom: 40px;
+                            border-bottom: 2px solid #2c3e50;
+                            padding-bottom: 20px;
+                        }
+                        .section {
+                            margin-bottom: 30px;
+                        }
+                        ol {
+                            padding-right: 20px;
+                        }
+                        li {
+                            margin-bottom: 10px;
+                        }
+                        @media print {
+                            body {
+                                padding: 20px;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${currentProposal.html}
+                    <div class="section">
+                        <p><em>این پروپوزال با استفاده از نرم‌افزار پژوهستان - مجموعه ابزارهای گروه دکتر شریفی تولید شده است.</em></p>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            const blob = new Blob([fullHTML], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `proposal_${currentProposal.topic.substring(0, 20)}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // پاک کردن تاریخچه
+        function clearHistory() {
+            if (confirm('آیا از پاک کردن تمام تاریخچه تولید پروپوزال‌ها مطمئن هستید؟ این عمل غیرقابل بازگشت است.')) {
+                history = [];
+                localStorage.removeItem('proposalHistory');
+                renderHistory();
+                alert('تاریخچه با موفقیت پاک شد.');
+            }
+        }
+        
+        // راه‌اندازی اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            // بارگذاری تاریخچه
+            renderHistory();
+            
+            // رویدادهای دکمه‌ها
+            document.getElementById('generateBtn').addEventListener('click', generateProposal);
+            document.getElementById('generateQuestionsBtn').addEventListener('click', generateQuestionsOnly);
+            document.getElementById('printBtn').addEventListener('click', printProposal);
+            document.getElementById('saveBtn').addEventListener('click', saveProposal);
+            document.getElementById('exportBtn').addEventListener('click', exportProposal);
+            document.getElementById('floatPrint').addEventListener('click', printProposal);
+            document.getElementById('floatDownload').addEventListener('click', exportProposal);
+            document.getElementById('floatClear').addEventListener('click', clearHistory);
+            
+            // مخفی کردن دکمه‌های شناور در ابتدا
+            document.getElementById('floatPrint').style.display = 'none';
+            document.getElementById('floatDownload').style.display = 'none';
+            
+            // پر کردن فرم با داده‌های نمونه (برای نمایش)
+            setTimeout(() => {
+                if (history.length === 0) {
+                    document.getElementById('topic').value = 'بررسی تأثیر هوش مصنوعی بر بهره‌وری سازمانی';
+                    document.getElementById('name').value = 'علی محمدی';
+                    document.getElementById('field').value = 'engineering';
+                    document.getElementById('background').value = 'با گسترش فناوری‌های هوش مصنوعی، سازمان‌ها به دنبال استفاده از این فناوری‌ها برای بهبود بهره‌وری و کارایی هستند. این پژوهش به بررسی ابعاد مختلف این تأثیر می‌پردازد.';
+                    document.getElementById('objectives').value = 'بررسی رابطه بین پیاده‌سازی هوش مصنوعی و شاخص‌های بهره‌وری سازمانی\nشناسایی عوامل مؤثر بر موفقیت پروژه‌های هوش مصنوعی در سازمان‌ها\nطراحی مدلی برای ارزیابی تأثیر هوش مصنوعی بر بهره‌وری';
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
